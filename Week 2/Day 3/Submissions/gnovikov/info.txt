@@ -1,0 +1,123 @@
+ssh://gnovikov@10.30.16.130:2399/data/miniconda3_for_docker/envs/ml/bin/python -u /home/gnovikov/.pycharm_helpers/pydev/pydevd.py --multiproc --qt-support=auto --client 0.0.0.0 --port 42043 --file /data/work/FDS2020/ml.py
+pydev debugger: process 23932 is connecting
+
+Connected to pydev debugger (build 201.6668.115)
+Fitting 5 folds for each of 810 candidates, totalling 4050 fits
+[Parallel(n_jobs=24)]: Using backend LokyBackend with 24 concurrent workers.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Traceback (most recent call last):
+  File "/home/gnovikov/.pycharm_helpers/pydev/_pydevd_bundle/pydevd_comm.py", line 285, in _on_run
+    r = self.sock.recv(1024)
+OSError: [Errno 9] Bad file descriptor
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+Expected: /home/gnovikov/.pycharm_helpers/pydev/pydevd_attach_to_process/attach_linux_amd64.so to exist.
+pydev debugger: process 24003 is connecting
+
+pydev debugger: process 24004 is connecting
+
+pydev debugger: process 24005 is connecting
+
+pydev debugger: process 24006 is connecting
+
+pydev debugger: process 24007 is connecting
+
+pydev debugger: process 24008 is connecting
+
+pydev debugger: process 24009 is connecting
+
+pydev debugger: process 24010 is connecting
+
+pydev debugger: process 24011 is connecting
+
+pydev debugger: process 24012 is connecting
+
+pydev debugger: process 24015 is connecting
+
+pydev debugger: process 24016 is connecting
+
+pydev debugger: process 24017 is connecting
+
+pydev debugger: process 24018 is connecting
+
+pydev debugger: process 24019 is connecting
+
+pydev debugger: process 24020 is connecting
+
+pydev debugger: process 24021 is connecting
+
+pydev debugger: process 24022 is connecting
+
+pydev debugger: process 24025 is connecting
+
+pydev debugger: process 24026 is connecting
+
+pydev debugger: process 24028 is connecting
+
+pydev debugger: process 24029 is connecting
+
+pydev debugger: process 24030 is connecting
+
+pydev debugger: process 24031 is connecting
+
+[Parallel(n_jobs=24)]: Done   2 tasks      | elapsed:   21.7s
+[Parallel(n_jobs=24)]: Done 152 tasks      | elapsed:  6.9min
+[Parallel(n_jobs=24)]: Done 402 tasks      | elapsed: 19.0min
+[Parallel(n_jobs=24)]: Done 752 tasks      | elapsed: 40.8min
+[Parallel(n_jobs=24)]: Done 1202 tasks      | elapsed: 78.8min
+[Parallel(n_jobs=24)]: Done 1752 tasks      | elapsed: 113.5min
+[Parallel(n_jobs=24)]: Done 2402 tasks      | elapsed: 158.2min
+[Parallel(n_jobs=24)]: Done 3152 tasks      | elapsed: 208.8min
+[Parallel(n_jobs=24)]: Done 4002 tasks      | elapsed: 274.0min
+[Parallel(n_jobs=24)]: Done 4050 out of 4050 | elapsed: 282.6min finished
+GridSearchCV(cv=None, error_score=nan,
+             estimator=GradientBoostingRegressor(alpha=0.9, ccp_alpha=0.0,
+                                                 criterion='friedman_mse',
+                                                 init=None, learning_rate=0.1,
+                                                 loss='ls', max_depth=3,
+                                                 max_features=None,
+                                                 max_leaf_nodes=None,
+                                                 min_impurity_decrease=0.0,
+                                                 min_impurity_split=None,
+                                                 min_samples_leaf=1,
+                                                 min_samples_split=2,
+                                                 min_weight_fraction_leaf=0.0,
+                                                 n_estimators=100,
+                                                 n_ite...
+                                                 verbose=0, warm_start=False),
+             iid='deprecated', n_jobs=24,
+             param_grid={'learning_rate': [0.05, 0.1, 0.5],
+                         'max_depth': [2, 3, 5],
+                         'max_features': ['sqrt', 'log2'],
+                         'min_samples_leaf': array([2, 4, 8]),
+                         'n_estimators': array([  64,  128,  256,  512, 1024]),
+                         'subsample': [0.5, 0.75, 1.0]},
+             pre_dispatch='2*n_jobs', refit=True, return_train_score=False,
+             scoring='neg_mean_squared_error', verbose=1)
+{'learning_rate': 0.05, 'max_depth': 5, 'max_features': 'sqrt', 'min_samples_leaf': 4, 'n_estimators': 256, 'subsample': 1.0}
+-193.74455969754428
+364.11371949306766
+
+Process finished with exit code 0

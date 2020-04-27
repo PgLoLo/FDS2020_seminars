@@ -16,7 +16,7 @@ def get_arguments():
     parser.add_argument('--data', type=Path, default=Path('./data/nycflights'))
     parser.add_argument('--test-size', type=float, default=.3)
     parser.add_argument('--seed', type=int, default=19)
-    parser.add_argument('--n-jobs', type=int, default=24)
+    parser.add_argument('--n-jobs', type=int, default=8)
     parser.add_argument('--shrink-factor', type=float, default=.5)
 
     return parser.parse_args()

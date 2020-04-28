@@ -2,11 +2,12 @@ import argparse
 import time
 from pathlib import Path
 
-import numpy as np
 import pandas as pd
 from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import GridSearchCV
 
+from ml_utils import create_param_grid, Timer
 from xy_loader import XyLoader
 
 
@@ -22,46 +23,42 @@ def get_arguments():
     return parser.parse_args()
 
 
-def create_param_grid():
-    return {
-        'learning_rate': [0.05, 0.5],
-        'n_estimators': 2 ** np.arange(6, 10),
-        'subsample': [0.5, 1.],
-        'min_samples_leaf': 2 ** np.arange(1, 4),
-        'max_depth': [3, 5],
-        'max_features': ['sqrt', 'log2'],
-    }
-
-
-def main(args):
-    start_time = time.time()
-
-    xy_loader = XyLoader(pd, args.data, args.test_size, args.seed, shrink=args.shrink_factor)
-    (X_train, y_train), (X_test, y_test) = xy_loader.load()
-    data_loaded = time.time()
-
+def perform_grid_search(X, y, n_jobs):
     regressor = GradientBoostingRegressor()
     grid_search = GridSearchCV(
         estimator=regressor,
         param_grid=create_param_grid(),
         scoring='neg_mean_squared_error',
-        n_jobs=args.n_jobs,
+        n_jobs=n_jobs,
         verbose=10,
     )
 
-    grid_search.fit(X_train, y_train)
-    grid_search_finished = time.time()
+    grid_search.fit(X, y)
+    return grid_search
 
-    print(grid_search)
-    print(grid_search.best_params_)
-    print(grid_search.best_score_)
 
-    predicted = grid_search.predict(X_test)
-    print(((predicted - y_test)**2).mean())
+def train_test_final_model(X_train, y_train, X_test, y_test, parameters):
+    regressor = GradientBoostingRegressor(**parameters)
+    regressor.fit(X_train, y_train)
+    return mean_squared_error(y_test, regressor.predict(X_test))
+
+
+def main(args):
+    with Timer() as data_load_timer:
+        xy_loader = XyLoader(pd, args.data, args.test_size, args.seed, shrink=args.shrink_factor)
+        (X_train, y_train), (X_test, y_test) = xy_loader.load()
+
+    with Timer() as grid_search_timer:
+        grid_search = perform_grid_search(X_train, y_train, args.n_jobs)
+
+    with Timer() as final_model_timer:
+        final_loss = train_test_final_model(X_train, y_train, X_test, y_test, grid_search.best_params_)
+
     print(
-        f'Data loading time: {data_loaded - start_time:.3f}\n'
-        f'Grid searcg time:  {grid_search_finished - data_loaded}\n'
-        f'Total:             {grid_search_finished - start_time}'
+        f'Data loading time:        {data_load_timer.elapsed_time:7.3f}\n'
+        f'Grid search time:         {grid_search_timer.elapsed_time:7.3f}\n'
+        f'Final model testing time: {final_model_timer.elapsed_time:7.3f}\n'
+        f'Final loss: {final_loss}\n'
     )
 
 

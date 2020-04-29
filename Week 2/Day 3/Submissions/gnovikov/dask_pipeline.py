@@ -4,9 +4,7 @@ from pathlib import Path
 
 import dask
 import dask.dataframe
-from dask import delayed
 from dask.distributed import Client, LocalCluster
-from dask_ml.metrics import mean_squared_error
 from dask_ml.model_selection import GridSearchCV
 from dask_ml.xgboost import XGBRegressor
 from sklearn.ensemble import GradientBoostingRegressor

@@ -1,11 +1,19 @@
 from pathlib import Path
 from random import random
-from typing import List, Union
+from typing import List
 
 from sklearn.model_selection import train_test_split
 
 
 class XyLoader:
+    """
+    Prepares the dataset: loads dataframes, performs feature engineering,
+    converts everything to the format of model training pipeline.
+
+    Here is shown, how one could abstract logic and of datapreparation and avoid code duplication
+    if two frameworks try to mimic each other.
+    """
+
     FEATURES = [
         'CRSDepTime',
         'CRSArrTime',
